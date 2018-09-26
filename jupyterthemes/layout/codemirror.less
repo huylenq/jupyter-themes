@@ -117,7 +117,6 @@ div.tooltiptext.bigtooltip {
     font-size: @monofontsize;
     background: @cc-input-bg;
     color: @cc-input-fg;
-    border-radius: 2px;
     font-style: normal;
     font-weight: normal;
 }
@@ -125,17 +124,29 @@ div.tooltiptext.bigtooltip {
     background: @cm-selected;
 }
 .CodeMirror-gutters {
-    border: none;
-    border-right: 1px solid @cm-gutters !important;
     background-color: @cm-gutters !important;
     background: @cm-gutters !important;
     border-radius: 0px;
+    border-left: 1px solid @cm-gutters-border;
     white-space: nowrap;
+    // Attempt to fix the toc2 visible right gutter problem
+    border-right: none !important;
+    border-right-color: red !important;
+    border-right-width: 0px;
+    display: inline-block !important;
+    box-sizing: content-box;
 }
+
+.cell.selected .CodeMirror-gutters {
+    border-color: @cc-border-selected;
+}
+
+.edit_mode div.cell.code_cell.selected .input .CodeMirror-gutters {
+    border-color: @cc-border-edit;
+}
+
 .cm-s-ipython .CodeMirror-gutters {
     background: @cm-gutters;
-    border: none;
-    border-radius: 0px;
     width: 36px;
 }
 .cm-s-ipython .CodeMirror-linenumber {
@@ -157,9 +168,6 @@ div.CodeMirror-gutter.CodeMirror-linenumber {
 }
 .CodeMirror-linenumber {
     color: @cm-linenumber;
-}
-.cm-s-ipython .CodeMirror-cursor {
-    border-left: @cursor-info !important;
 }
 .cm-s-ipython span.cm-comment {
     color: @cm-comment;
@@ -303,6 +311,17 @@ div.cell.text_cell .cm-s-default span.cm-variable-3 {
     border-right: none;
     width: 0;
 }
+.CodeMirror.cm-fat-cursor div.CodeMirror-cursor {
+    background: rgba(255, 210, 0, 1.0);
+}
+.cm-animate-fat-cursor {
+    background: rgba(255, 210, 0, 1.0);
+}
+// .cm-animate-fat-cursor {
+//     back
+//     animation: blink 1.06s steps(1) infinite;
+//     -webkit-animation: blink 1.06s steps(1) infinite;
+// }
 .cm-s-default div.CodeMirror-selected {
     background: @cm-selected;
 }

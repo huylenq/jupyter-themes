@@ -8,7 +8,7 @@
     line-height: normal;
     white-space: normal;
     max-width: none;
-    border: none;
+    border-right: 1px solid white;
 }
 .rendered_html td {
     font-family: @notebook-fontfamily !important;
@@ -35,9 +35,11 @@
 .rendered_html tbody tr:nth-child(odd) {
     background: @table-bg;
 }
+
 .rendered_html tbody tr {
     background: darken(@table-bg, 3%);
 }
+
 .rendered_html tbody tr:hover:nth-child(odd) {
     background: darken(@table-bg,1%);
 }
@@ -47,6 +49,7 @@
 .rendered_html * + table {
     margin-top: .05em;
 }
+
 /*********** WIDGETS ***********/
 div.widget-area {
     background-color: @cc-output-bg;
@@ -487,6 +490,43 @@ div.collapsible_headings_toggle .fa-caret-right:before {
   font-size: @monofontsize !important;
 }
 
+#toc .toc-item .toc-item-highlight-select {
+    background: #222;
+    color: #eee !important;
+}
+
+// FIXME: merge with above (I don't know LESS :P)
+#toc .toc-item-highlight-select:hover {
+    background: #111 !important;
+    color: #eee !important;
+}
+
+#toc .toc-item-highlight-select .toc-item-num {
+    color: #eee !important;
+}
+
+#toc .toc-item .toc-item-highlight-execute {
+    background: @code-yellow;
+    color: white !important;
+}
+
+#toc .toc-item li span a {
+    padding: 2px;
+}
+
+.highlight_on_scroll {
+    border-left-color: #222 !important;
+}
+
+#toc-header {
+    display: none;
+}
+
+#toc-header {
+    margin-bottom: .8rem;
+    color: #777 !important;
+}
+
 /********** DEBUGGER PATCH **********/
 input.raw_input {
     font-family: @monofont, monospace;
@@ -861,4 +901,28 @@ div#pager .ui-resizable-handle {
     background: @item-theme !important;
     border-top: 1px solid @item-theme;
     border-bottom: 1px solid @item-theme;
+}
+
+.reveal table th, .reveal table td {
+    border-bottom: none;
+}
+
+#exit_b {
+    display: none;
+}
+
+#help_b {
+    display: none;
+}
+
+#nbextension-scratchpad .scratchpad-btn {
+    opacity: 0;
+}
+
+#notebook-container {
+    transition: width 1s;
+}
+
+#notebook-container.full-width {
+    width: 99.5%;
 }

@@ -7,7 +7,7 @@ div.input_area {
     background-color: @cc-input-bg;
     background: @cc-input-bg;
     padding-right: 1.2em;
-    border: 0px;
+    border: 1px;
     border-radius: 0px;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
@@ -28,7 +28,8 @@ div.cell.selected {
     padding: 0px;
     border-radius: 5px;
 }
-
+// HERE
+>>>>>>> Stashed changes
 .edit_mode div.cell.selected {
     padding: 0px;
     background: @cc-input-bg; //@notebook-bg;
@@ -38,8 +39,9 @@ div.cell.selected {
 }
 div.cell.edit_mode {
     padding: 0px;
-    background: @cc-input-bg; //@notebook-bg;
-    background-color: @cc-input-bg; //@notebook-bg;
+    background: @notebook-bg;
+    background-color: @notebook-bg;
+    background: none;
 }
 div.CodeMirror-sizer {
     margin-left: 0px;
@@ -50,28 +52,13 @@ div.CodeMirror-sizer {
     padding-bottom: 0px;
     margin-top: 0px;
 }
+
+
 div.cell.selected:before,
 .edit_mode div.cell.selected:before,
 div.cell.selected:before,
 div.cell.selected.jupyter-soft-selected:before  {
-    background: @cc-input-bg !important;
-    border: none;
-    border-radius: 3px;
-    position: absolute;
-    display: block;
-    top: 0px;
-    left: 0px;
-    width: 0px;
-    height: 100%;
-}
-
-div.cell.text_cell.selected::before,
-.edit_mode div.cell.text_cell.selected:before,
-div.cell.text_cell.selected:before,
-div.cell.text_cell.selected.jupyter-soft-selected:before {
-  background: @text-cell-bg !important;
-  background-color: @text-cell-bg !important;
-  border-color: @tc-border-selected !important;
+    display: none;
 }
 
 div.cell.code_cell .input {
@@ -88,10 +75,9 @@ div.cell.code_cell.selected .input {
     border-left: 5px solid @cc-border-edit !important;
     border-radius: 3px;
 }
+
 .edit_mode div.cell.selected:before {
-    height: 100%;
-    border-left: 5px solid @cc-border-edit !important;
-    border-radius: 3px;
+    display: none;
 }
 
 /*********** JUPYTER CELLS SOFT-SELECTED ************/
@@ -279,9 +265,12 @@ div.output_subarea {
     flex: 1;
 }
 div.btn.btn-default.output_collapsed {
-    background: darken(@button-panel-bg, 5%);
-    background-color: darken(@button-panel-bg, 5%);
-    border-color: darken(@button-panel-bg, 5%);
+    background-color: transparent;
+    border: none;
+    text-align: left;
+    margin-left: 3em;
+    font-size: 1em;
+    color: #333
 }
 div.btn.btn-default.output_collapsed:hover {
     background: darken(@button-panel-bg, 7%);

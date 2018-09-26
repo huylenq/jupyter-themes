@@ -1,3 +1,4 @@
+@hl-yellow:             rgba(255, 210, 0, 0.6);
 /* grade3 base colors */
 @yellow:                #f39c12;
 @orange:                #ff8132;
@@ -34,7 +35,7 @@
 @selected-half:         rgba(180, 180, 180,.30);
 @selected-third:        rgba(180, 180, 180,.14);
 @selected-tenth:        #fafafa;
-@selected-error:        rgba(191, 97, 106, .40);
+@selected-error:        none;
 @selected-active:       @item-theme;
 @navbar-selected:       @selected-third;
 @selected-fg:           #2F2F2F;
@@ -42,23 +43,24 @@
 @unemphasize-fg:        #4A4A4A;
 
 /* code, text, markdown, & tooltip colors */
-@cc-input-bg:           #ededed;
+@cc-input-bg:           white;
 @cc-input-fg:           #303030;
 @cc-output-bg-default:  #ffffff;
 @cc-output-fg:          #303030;
 @text-cell-fg:          #353535;
-@unrendered-text:       #126DCE;
+@unrendered-text:       #333;
 @header-fg:             @unrendered-text;
 @tooltip-bg-color:      @notebook-base;
-@tooltip-fg-color:      #222222;
+@tooltip-fg-color:      #333;
 @nb-name-fg:            @item-theme;
 @nb-name-hover:         #DE6D25;
 
 /* cell border colors */
-@cc-border-selected:    @item-theme;
-@cc-border-edit:        #ffd5bb;
+@cc-border-selected:    #999;
+@cc-border-edit:        #666;
 @tc-border-selected:    #f2f2f2;
 @tc-border-edit:        @tc-border-selected;
+
 
 /* menus, dividers, prompt-borders, brackets */
 @disabled:              #828892;
@@ -90,7 +92,7 @@
 @cmd-palette-hover:     @panel-bg;
 
 /* buttons, widgets, kernels colors */
-@item-theme:            #FF7823;
+@item-theme:            #666;
 @item-blue:             #126DCE;
 @item-cyan:             #2c85f7;
 @item-green:            #009e07;
@@ -144,8 +146,9 @@
 @js-error:              @red;
 
 /* grade3 codemirror colors */
-@cm-selected:           #e0e1e3;
-@cm-gutters:            @cm-selected;
+@cm-selected:           rgba(255, 210, 0, 0.6);
+@cm-gutters:            white;
+@cm-gutters-border:     #ccc;
 @cm-linenumber:         @disabled;
 @cm-comment:            #8d8d8d;
 @cm-atom:               @blue;
@@ -155,7 +158,7 @@
 @cm-keyword:            @violet;
 @cm-string:             @green;
 @cm-meta:               @cyan;
-@cm-operator:           @blue;
+@cm-operator:           @code-gray;
 @cm-builtin:            @magenta;
 @cm-variable:           @cc-input-fg;
 @cm-variable2:          @red;
@@ -168,3 +171,6 @@
 @cm-storage:            @blue;
 @cm-entity:             @magenta;
 @cm-latex:              #009fb7;
+
+
+@gutter-selected: red;

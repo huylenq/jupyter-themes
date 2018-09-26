@@ -1305,8 +1305,8 @@ div.modal-footer > button:hover  {
 }
 .modal-backdrop,
 .modal-backdrop.in {
-    opacity: 0.85;
-    background-color: notebook-bg; //@table-border;
+    opacity: 0.5;
+    background-color: @notebook-bg; //@table-border;
 }
 div.panel,
 div.panel-default,
@@ -1583,3 +1583,123 @@ HTML, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form
 // .cf {
 //     zoom:1;
 // }
+
+#notebook-container.side-by-side {
+    width: 88%;
+}
+
+#notebook-container.side-by-side .code_cell {
+    flex-direction: row !important;
+}
+
+#notebook-container.side-by-side .code_cell .input {
+    width: 50%
+}
+
+#notebook-container.side-by-side .code_cell .output_wrapper {
+    width: 50%
+}
+
+// section.present .illustration {
+//     .input {
+//         display: none;
+//     }
+//     .out_prompt_overlay {
+//         display: none;
+//     }
+//     .output_prompt {
+//         display: none;
+//     }
+//     .output_wrapper {
+//         position: fixed;
+//         left: 850px !important;
+//         top: 100px;
+//         background: red !important;
+//         width: 300px;
+//     }
+// }
+
+// section.present .illustration {
+//     .input {
+//         display: none;
+//     }
+//     .out_prompt_overlay {
+//         display: none;
+//     }
+//     .output_prompt {
+//         display: none;
+//     }
+//     display: inline;
+//     float: left;
+//     width: 400px;
+//     height: 600px;
+//     transform: translateX(-180px);
+// }
+
+section.present .illustration {
+    .input {
+        display: none;
+    }
+    .out_prompt_overlay {
+        display: none;
+    }
+    .output_prompt {
+        display: none;
+    }
+    width: 400px;
+    position: absolute;
+    left: -195px;
+    top: 100px;
+}
+
+// section.present .illustration ~ .cell {
+//     display: inline;
+//     margin-left: 40px;
+// }
+
+section.present .illustration ~ .cell > .inner_cell > .text_cell_render.rendered_html {
+    white-space: nowrap;
+    overflow: visible;
+    transform: translateX(220px);
+    z-index: 1000;
+}
+
+// section.present .illustration ~ .cell > .inner_cell > .text_cell_render.rendered_html {
+//     white-space: nowrap;
+//     overflow: visible;
+//     transform: translateX(-100px);
+// }
+
+section.present .illustration ~ .cell.code_cell {
+    // Any OR selector in LESS
+    .input {
+        transform: translateX(220px);
+    } .output_wrapper {
+        transform: translateX(220px);
+    }
+}
+
+// section.present .illustration ~ .cell.code_cell {
+//     // Any OR selector in LESS
+//     .input {
+//         transform: translateX(-100px);
+//     }
+//     .output_wrapper {
+//         transform: translateX(-100px);
+//     }
+// }
+
+
+section.present .illustration ~ .fragment.visible {
+    transform: translateX(220px);
+}
+
+
+// Doesn't work
+section.present {
+    overflow-x: visible !important;
+}
+
+section.present::-webkit-scrollbar {
+    display: none;
+}
